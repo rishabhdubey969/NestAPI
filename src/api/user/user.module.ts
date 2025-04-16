@@ -5,7 +5,7 @@ import { UserController } from './user.controller';
 import { AuthenticationModule } from  '../authentication/authentication.module';
 import { Authentication, AuthenticationSchema } from '../authentication/entities/authentication.entity';
 import {UserProfile, UserProfileSchema} from './entities/user.entity';
-import { UserMiddleware } from '../../common/user.middleware';
+import { UserMiddleware } from '../../middleware/user.middleware';
 
 @Module({
   imports: [ MongooseModule.forFeature([{ name: Authentication.name, schema: AuthenticationSchema }, { name: UserProfile.name, schema: UserProfileSchema },]),

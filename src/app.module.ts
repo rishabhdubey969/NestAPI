@@ -6,7 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthenticationModule } from './api/authentication/authentication.module';
 import { jwtConstants } from '../jwt_security/jwt.constant';
 import { JwtModule } from '@nestjs/jwt';
-import { UserMiddleware } from './common/user.middleware';
+import { UserMiddleware } from './middleware/user.middleware';
 import { UserModule } from './api/user/user.module';
 import { PostModule } from './api/post/post.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -33,7 +33,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     JwtModule.register({
       global: true,
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '60s' },
+      signOptions: { expiresIn: '1h' },
     }),
     UserModule,
     PostModule,
